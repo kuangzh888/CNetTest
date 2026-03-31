@@ -364,3 +364,5 @@ FodyWeavers.xsd
 CNetTest.sln
 .vscode/
 global.json
+scripts/sync-vscode-dotnet.mjs
+scripts/sync-dotnet-sln.mjs
