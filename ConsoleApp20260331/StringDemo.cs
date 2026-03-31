@@ -101,7 +101,12 @@ namespace ConsoleApp20260331
         }
 
 
-
+        // 5
+        // xun zhang zhai ju lao diao chong, xiao yue dang lian gua yu gong.
+        // tian sheng wo cai bi you yong, qian jin san jin huan fu lai.
+        // xue zhui rou zhi leng wei rong, an xiao chen jing shu wei long.
+        // zuo ye xing chen zuo ye feng, hua lou xi pan gui tang dong.
+        // ren xian gui hua luo, ye jing chun shan kong. 
         static void RingDunceBell()
         {
             int count = int.Parse(Console.ReadLine());
@@ -110,67 +115,46 @@ namespace ConsoleApp20260331
             {
                 inputs[i] = Console.ReadLine();
             }
-
-
-
-
-
-
-
+            Console.WriteLine("输入完成，正在处理数据...\n");
             for (int i = 0; i < inputs.Length; i++)
             {
                 string input = inputs[i];
-
-                
-                bool hasCong = false;
-
+                bool hasCong1 = false;
+                bool hasCong2 = false;
                 string[] strings = input.Split(' ');
-
-
                 for (int j = 0; j < strings.Length; j++)
                 {
-                    Console.WriteLine($"{strings[j]}");
-                }
-
-                Console.WriteLine($"1:{(input.Contains(',') && input.Contains("cong"))} 2:{(input.Contains('.') && input.Contains("cong"))}");
-                if ((input.Contains(',') && input.Contains("cong")) &&
-                    (input.Contains('.') && input.Contains("cong"))
-                    )
-                {
-                    hasCong = true;
-                }
-
-
-
-
-
-
-                string temp = input.Substring(0, input.Length - 1);
-                
-
-                string[] stringArray = temp.Split(' ');
-
-                //Console.WriteLine(strings.Last());
-                string last = stringArray.Last();
-
-                if (hasCong)
-                {
-                    for (int j = stringArray.Length - 1; j > stringArray.Length - 4; j--) {
-                        Console.WriteLine($"{stringArray[j]}");
+                    if (strings[j].Contains(',') && strings[j].Contains("ong"))
+                    {
+                        hasCong1 = true;
                     }
-
+                    if (strings[j].Contains('.') && strings[j].Contains("ong"))
+                    {
+                        hasCong2 = true;
+                    }
+                }
+                if (hasCong1 && hasCong2)
+                {
+                    for (int j = strings.Length - 1; j > strings.Length - 4; j--)
+                    {
+                        // Console.Write($"{strings[j]} ");
+                        if (j == strings.Length - 1)
+                        {
+                            strings[j] = "zhong.";
+                        } else if (j == strings.Length - 2)
+                        {
+                            strings[j] = "ben";
+                        } else if (j == strings.Length - 3)
+                        {
+                            strings[j] = "qiao";
+                        }
+                    }
+                    Console.WriteLine(string.Join(" ", strings));
                 } else
                 {
                     Console.WriteLine("Skipped");
                 }
-
             }
-
-
-
         }
-
-       
-
     }
 }
