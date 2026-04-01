@@ -24,7 +24,8 @@ namespace ConsoleApp20260331
 
 
             //RevealPattern();
-            RingDunceBell();
+            //RingDunceBell();
+            test();
         }
 
 
@@ -155,6 +156,93 @@ namespace ConsoleApp20260331
                     Console.WriteLine("Skipped");
                 }
             }
+        }
+
+
+        /*
+         * 
+在某图形操作系统中，有 N
+ 个窗口，每个窗口都是一个两边与坐标轴分别平行的矩形区域。
+
+窗口的边界上的点也属于该窗口。
+
+窗口之间有层次的区别，在多于一个窗口重叠的区域里，只会显示位于顶层的窗口里的内容。
+
+当你点击屏幕上一个点的时候，你就选择了处于被点击位置的最顶层窗口，并且这个窗口就会被移到所有窗口的最顶层，而剩余的窗口的层次顺序不变。
+
+如果你点击的位置不属于任何窗口，则系统会忽略你这次点击。
+
+现在我们希望你写一个程序模拟点击窗口的过程。
+         */
+        static void test()
+        {
+            string input = Console.ReadLine();
+            string[] inputs = input.Split(' ');
+            int windowCount = int.Parse(inputs[0]);
+            int clickCount = int.Parse(inputs[1]);
+
+
+            
+
+
+            string[] windows = new string[windowCount];
+            for (int i = 0; i < windowCount; i++)
+            {
+                windows[i] = Console.ReadLine();
+            }
+
+            string[] clicks = new string[clickCount];
+            for (int i = 0; i < clickCount; i++)
+            {
+                clicks[i] = Console.ReadLine();
+            }
+            //Console.WriteLine(" ");
+            //Console.WriteLine(input);
+            //Console.WriteLine(string.Join("，", windows));
+            //Console.WriteLine(string.Join("，", clicks));
+
+            List<Window> windowList = new List<Window>();
+            for (int i = 0;i < windows.Length; i++)
+            {
+                int[] temp = Array.ConvertAll(windows[i].Split(' '), int.Parse);
+                Window window = new Window(x1: temp[0], y1: temp[1], x2: temp[2], y2: temp[3], i + 1);
+                windowList.Add(window);
+            }
+
+
+            for (int i = 0; i < clicks.Length; i++) {
+                int[] temp = Array.ConvertAll(clicks[i].Split(' '), int.Parse);
+                bool find = false;
+
+                //Console.WriteLine("windowList.Count" + windowList.Count);
+
+                for (int j = windowList.Count - 1; j >= 0; j--)
+                {
+                    Window tWindow = windowList[j];
+
+
+                    //Console.WriteLine(tWindow + " " + temp[0] + " " + temp[1] + " j=" + j);
+
+
+                    if (tWindow.IsPointInWindow(temp[0], temp[1]))
+                    {
+                        windowList.RemoveAt(j);
+                        windowList.Add(tWindow);
+
+                        
+                        Console.WriteLine(tWindow.id);
+                        find = true;
+                        break;
+                    }
+                }
+
+                if (!find)
+                {
+                    Console.WriteLine("IGNORED");
+                }
+
+            }
+
         }
     }
 }
