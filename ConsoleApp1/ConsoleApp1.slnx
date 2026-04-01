@@ -1,6 +1,7 @@
 <Solution>
   <Project Path="../ConsoleApp20260330/ConsoleApp20260330.csproj" Id="58386216-e346-4390-81ea-044cb51218d0" />
   <Project Path="../ConsoleApp20260331/ConsoleApp20260331.csproj" Id="fd31da38-a8f4-44a3-845e-0a0a20db65e1" />
+  <Project Path="../ConsoleApp20260401/ConsoleApp20260401.csproj" Id="c474b54f-788f-4fb8-884b-57bfdf151b29" />
   <Project Path="../ShareLib/ShareLib.csproj" Id="a1a8cf8b-4c2a-41a6-8ae2-1e35147421ca" />
   <Project Path="ConsoleApp1.csproj" />
 </Solution>
