@@ -65,18 +65,19 @@ namespace ConsoleApp20260331
             {
                 Console.Write(card + " ");
             }
+            HashSet<string> suitSet = hand.Select(x => x.suit).ToHashSet();
+            HashSet<int> rankSet = hand.Select(x => x.rank).ToHashSet();
 
-            HashSet<string> suitSet = new HashSet<string>();
-            foreach (Card card in hand)
-            {
-                suitSet.Add(card.suit);
-            }
-
-            HashSet<int> rankSet = new HashSet<int>();
-            foreach (Card card in hand)
-            {
-                rankSet.Add(card.rank);
-            }
+            //HashSet<string> suitSet = new HashSet<string>();
+            //foreach (Card card in hand)
+            //{
+            //    suitSet.Add(card.suit);
+            //}
+            //HashSet<int> rankSet = new HashSet<int>();
+            //foreach (Card card in hand)
+            //{
+            //    rankSet.Add(card.rank);
+            //}
 
             bool isStraight = hand[4].rank - hand[0].rank == 4 && rankSet.Count == 5;
 
