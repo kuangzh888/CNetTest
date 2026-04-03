@@ -13,15 +13,3 @@ namespace ConsoleApp20260402
         }
     }
 }
-
-
-//namespace ConsoleApp20260402
-//{
-//    static internal class StringExtension
-//    {
-//        public static int WordCount(this string info)
-//        {
-//            return info.Split(" ").Length;
-//        }
-//    }
-//}

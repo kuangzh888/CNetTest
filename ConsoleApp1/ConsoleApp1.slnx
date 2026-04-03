@@ -5,5 +5,6 @@
   <Project Path="../ConsoleApp20260402/ConsoleApp20260402.csproj" Id="622df899-c28e-43c2-bfea-47f0343f2012" />
   <Project Path="../ConsoleApp20260403/ConsoleApp20260403.csproj" Id="cd031356-4a11-4331-8c38-6d091550d2b5" />
   <Project Path="../ShareLib/ShareLib.csproj" Id="a1a8cf8b-4c2a-41a6-8ae2-1e35147421ca" />
+  <Project Path="../WinFormsApp20260403/WinFormsApp20260403.csproj" Id="bfbc3220-65ca-4182-8e0c-f1c1346d3080" />
   <Project Path="ConsoleApp1.csproj" />
 </Solution>
