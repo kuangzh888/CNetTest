@@ -13,6 +13,8 @@ namespace ConsoleApp20260402
 
         private string name;
         private int age;
+        private int deptno;
+
         public Person() { }
 
         public string Name { get => name; set => name = value; }
@@ -30,6 +32,10 @@ namespace ConsoleApp20260402
             }
         }
 
+        public int Deptno { get => deptno; set => deptno = value; }
+
+
+
         //public Person(string name, int age) {
         //    this.Name = name;
         //    this.Age = age;
@@ -38,7 +44,7 @@ namespace ConsoleApp20260402
 
         public override string ToString()
         {
-            return $"Name: {name}, Age: {age}";
+            return $"{deptno}:Name: {name}, Age: {age}";
         }
     }
 }

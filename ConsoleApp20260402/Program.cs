@@ -1,23 +1,16 @@
-﻿using System.Text;
+﻿using System.Diagnostics.Tracing;
+using System.Text;
 
 namespace ConsoleApp20260402
 {
-
-
-
-
-
     internal class Program
     {
-
-
         //delegate int op(int x, int y);
         //static op addFunc = (x, y) =>
         //{
         //    Console.WriteLine("Hello");
         //    return x + y;
         //};
-
 
         // Func 有返回值 但返回值只能是BOOL
         static Predicate<Person> isOld = (person) =>
@@ -150,11 +143,70 @@ namespace ConsoleApp20260402
             //int count = enumerable.Count();
             //Console.WriteLine(count);
 
+            //Random random = new Random();
+            //List<Person> personList = Enumerable.Range(1, 10).Select(x =>
+            //{
+            //    var person = new Person { Name = "zhangsan" + x, Age = x, Deptno = random.Next(3) + 1 };
+            //    return person;
+            //}).ToList();
+
+            //IEnumerable<IGrouping<int, Person>> enumerable = personList.GroupBy(p => p.Deptno);
+            //foreach (IGrouping<int, Person> group in enumerable)
+            //{
+            //    Console.WriteLine("Deptno: " + group.Key);
+            //    foreach (Person person in group)
+            //    {
+            //        Console.WriteLine(person);
+            //    }
+            //}
 
 
-            Dictionary<int, int> dict = new Dictionary<int, int>();
+            // 转字典
+            //Random random = new Random();
+            //List<Person> personList = Enumerable.Range(1, 10).Select(x =>
+            //{
+            //    var person = new Person { Name = "zhangsan" + x, Age = x, Deptno = random.Next(3) + 1 };
+            //    return person;
+            //}).ToList();
+
+            //Dictionary<string, int> dictionary = personList.ToDictionary(p => p.Name, p => p.Age);
+            //foreach (var kv in dictionary)
+            //{
+            //    Console.WriteLine(kv.Key + ": " + kv.Value);
+            //}
 
 
+
+            //// 分组转字典
+            //Random random = new Random();
+            //List<Person> personList = Enumerable.Range(1, 10).Select(x =>
+            //{
+            //    var person = new Person { Name = "zhangsan" + x, Age = x, Deptno = random.Next(3) + 1 };
+            //    return person;
+            //}).ToList();
+            //Dictionary<int, List<Person>> dictionary = personList.GroupBy(p => p.Deptno).ToDictionary(g => g.Key, g => g.ToList());
+            //foreach (var kv in dictionary)
+            //{
+            //    Console.WriteLine("Deptno: " + kv.Key);
+            //    foreach (Person person in kv.Value)
+            //    {
+            //        Console.WriteLine(person);
+            //    }
+            //}
+
+            string info = "this is a book that is a is";
+            string[] arr = info.Split(' ');
+            Dictionary<string, string[]> dictionary = arr.GroupBy(word => word).ToDictionary(g => g.Key, static g => g.ToArray());
+            foreach (var kv in dictionary)
+            {
+                Console.WriteLine($"Key: {kv.Key}, Words: {string.Join(", ", kv.Value)}");
+            }
+
+            int count = info.WordCount();
+            Console.WriteLine("Word count: " + count);
+
+
+            Console.WriteLine($"{arr.ToStr()}");
         }
 
 
@@ -281,9 +333,6 @@ namespace ConsoleApp20260402
         //        Console.Write('\n');
         //    }
         //}
-
-
-
         static void demo3()
         {
             string n = Console.ReadLine();
@@ -340,5 +389,4 @@ namespace ConsoleApp20260402
             }
         }
     }
-}
 }

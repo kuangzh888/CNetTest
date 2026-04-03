@@ -3,6 +3,7 @@
   <Project Path="../ConsoleApp20260331/ConsoleApp20260331.csproj" Id="fd31da38-a8f4-44a3-845e-0a0a20db65e1" />
   <Project Path="../ConsoleApp20260401/ConsoleApp20260401.csproj" Id="c474b54f-788f-4fb8-884b-57bfdf151b29" />
   <Project Path="../ConsoleApp20260402/ConsoleApp20260402.csproj" Id="622df899-c28e-43c2-bfea-47f0343f2012" />
+  <Project Path="../ConsoleApp20260403/ConsoleApp20260403.csproj" Id="cd031356-4a11-4331-8c38-6d091550d2b5" />
   <Project Path="../ShareLib/ShareLib.csproj" Id="a1a8cf8b-4c2a-41a6-8ae2-1e35147421ca" />
   <Project Path="ConsoleApp1.csproj" />
 </Solution>
